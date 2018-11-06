@@ -1,9 +1,45 @@
 body{
     background-color: #a29bfe;
+    color:white;
+    text-align: center;
+}
+
+ul,button {
+    all:unset;
+}
+
+span{
+    font-size: 20px;
+}
+
+input{
+    all:unset;
+    width: 300px;
+    line-height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    margin-bottom:20px;
+    font-size: 20px;
+}
+
+::placeholder{
+    font-size:25px;
+    color:white;
 }
 
 .form, .greetings{
     display: none;
+}
+
+h1{
+    font-size: 200px;
+    margin-top:300px;
+    margin-bottom: 10px;
+}
+.greetings{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .showing{

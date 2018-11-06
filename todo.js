@@ -19,11 +19,8 @@ function deleteToDo(event){
         return element.id !== parseInt(li.id);
     });
     console.log(cleanToDos);
-    toDos = [];
+    toDos = cleanToDos;
     saveToDos();
-
-    location.reload(true);
-    cleanToDos.forEach(element => {updateToDo(element.text)});
 }
 
 function saveToDos(){
