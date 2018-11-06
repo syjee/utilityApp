@@ -3,7 +3,28 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
-const toDos = [];
+let toDos = [];
+
+function filterFn(toDo,id){
+    return toDo.id ===id;
+}
+
+function deleteToDo(event){
+    const btn = event.target;
+    const li = btn.parentNode;
+
+    toDoList.removeChild(li);
+
+    const cleanToDos = toDos.filter(function(element){
+        return element.id !== parseInt(li.id);
+    });
+    console.log(cleanToDos);
+    toDos = [];
+    saveToDos();
+
+    location.reload(true);
+    cleanToDos.forEach(element => {updateToDo(element.text)});
+}
 
 function saveToDos(){
     //convert JS to JSON
@@ -16,6 +37,8 @@ function paintToDo(text){
     
     const delBtn = document.createElement("button");
     delBtn.innerText = "❌";
+    delBtn.addEventListener("click",deleteToDo);
+
     const span = document.createElement("span");
     span.innerText = text;
 
@@ -23,6 +46,7 @@ function paintToDo(text){
 
     li.appendChild(span);
     li.append(delBtn);
+    li.id = newId;
 
     toDoList.appendChild(li);
 
