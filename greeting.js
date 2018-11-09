@@ -9,8 +9,15 @@ const USER_LS = "currentUser",
 function paintGreeting(text) {
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
-    greeting.innerText = `Hello ${text}`;
 
+    const time = new Date().getHours();
+    if (time < 12) {
+        greeting.innerText = `Good morning , ${text}.`;
+    } else if (time < 18) {
+        greeting.innerText = `Good afternoon , ${text}.`;
+    } else {
+        greeting.innerText = `Good evening , ${text}.`;
+    }
 }
 
 function saveName(text){
