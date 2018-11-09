@@ -1,30 +1,82 @@
+@import url('https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css');
+/*
+html { 
+    background: url(./images/3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+*/
+
 body{
-    background-color: #a29bfe;
+    font-family: 'Jeju Myeongjo', serif;
     color:white;
     text-align: center;
+    overflow:hidden;
 }
 
-ul,button {
+ul{
     all:unset;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*
+    all:unset;
+    overflow: hidden;*/
+}
+
+button{
+    all:unset;
+    display: inline;
+}
+
+li{
+    all:unset;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    padding-top:3px;
+    border-bottom: solid 2px white;
+    margin : 0px 35% 5px 35%;
+    padding-left: 2%;   
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 span{
-    font-size: 20px;
+    font-size: 23px;
+    display: inline-block;
+    width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-input{
-    all:unset;
-    width: 300px;
-    line-height: 40px;
-    background-color: rgba(0,0,0,0.5);
-    text-align: center;
-    margin-bottom:20px;
-    font-size: 20px;
+.check_btn{
+    width: 20px;
+    height:20px;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+.delete_btn{
+    width: 20px;
+    height:20px;
+    padding-right: 0;
+    display: inline-block;
+}
+
+.js-weather{
+    position: absolute;
+    top : 30px;
+    right: 40px;
+    font-size: 30px;
 }
 
 ::placeholder{
     font-size:25px;
     color:white;
+    font-family: 'Jeju Myeongjo', serif;
 }
 
 .form, .greetings{
@@ -37,9 +89,10 @@ h1{
     margin-bottom: 10px;
 }
 .greetings{
-    font-size: 30px;
+    font-size: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .showing{
@@ -61,4 +114,39 @@ h1{
     height: 100%;
     z-index: -1;
     animation: fadein 0.5s linear;
+}
+
+input {
+    text-align: center;
+    margin: 20px 30px;
+    width: 400px;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 1px white;
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, white 4%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, white 4%);
+    background-position: -400px 0;
+    background-size: 400px 100%;
+    background-repeat: no-repeat;
+    color:white;
+    font-size: 20px;
+}
+
+.copyright{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    font-size: 15px;
+}
+
+input:focus, input:valid {
+    text-align: center;
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+    font-size: 25px;
+    font-family: 'Jeju Myeongjo', serif;
 }

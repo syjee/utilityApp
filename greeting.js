@@ -11,13 +11,13 @@ function paintGreeting(text) {
     greeting.classList.add(SHOWING_CN);
 
     const time = new Date().getHours();
-    if (time < 12) {
+    if(time < 6){
+        greeting.innerText = `Good night , ${text}.`;
+    }else if (time < 12) {
         greeting.innerText = `Good morning , ${text}.`;
     } else if (time < 18) {
         greeting.innerText = `Good afternoon , ${text}.`;
-    } else {
-        greeting.innerText = `Good evening , ${text}.`;
-    }
+    } else greeting.innerText = `Good evening , ${text}.`;
 }
 
 function saveName(text){
